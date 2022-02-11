@@ -1,0 +1,404 @@
+/* General stuff */
+.landing-page {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    color: #232323;
+}
+
+/* Animating the typing bubbles */
+.landing-page .side-deco .messages-block .animated-message-block .circle1 {animation: circle1 3s infinite;}
+.landing-page .side-deco .messages-block .animated-message-block .circle2 {animation: circle2 3s infinite;}
+.landing-page .side-deco .messages-block .animated-message-block .circle3 {animation: circle3 3s infinite;}
+
+@keyframes circle1 {
+    0% {transform: translateY(0);}
+    15% {transform: translateY(-50%);}
+    33% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
+@keyframes circle2 {
+    0% {transform: translateY(0);}
+    33% {transform: translateY(0);}
+    48% {transform: translateY(-50%);}
+    66% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
+@keyframes circle3 {
+    0% {transform: translateY(0);}
+    66% {transform: translateY(0);}
+    81% {transform: translateY(-50%);}
+    100% {transform: translateY(0);}
+} 
+
+/* Common text-block div props */
+.landing-page .text-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-page .text-block .title {display: flex;}
+.landing-page .text-block .title h1 {font-weight: bold;}
+
+.landing-page .text-block p {
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 56px;
+}
+
+.landing-page .text-block .action-buttons h2 {
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.landing-page .text-block .action-buttons h2:hover {cursor: pointer;}
+.landing-page .text-block .action-buttons h2 img {margin: auto 0 auto 8px;}
+.landing-page .text-block .action-buttons h2:hover img {transform: translateX(+25%);}
+
+/* Common side-deco div props */
+.landing-page .side-deco {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    min-height: 750px;
+}
+
+.landing-page .side-deco .messages-block {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.landing-page .side-deco .messages-block .message {
+    position: relative;
+    width: 55%;
+    max-width: 480px;
+    box-shadow: 10px 50px 50px rgba(148, 166, 179, 0.65);
+    border-radius: 8px;
+}
+
+.landing-page .side-deco .messages-block .margin-box {
+    position: relative;
+    height: calc(6.2% * 1.2);
+    width: 100%;
+    background-color: transparent;
+}
+
+.landing-page .side-deco .messages-block .message1 {
+    height: calc(6.4% * 1);
+    background-color: #232323;
+    margin: 0px calc(8.33%) 0px auto;
+}
+
+.landing-page .side-deco .messages-block .message2 {
+    height: calc(6.4% * 3);
+    background-color: #232323;
+    margin: 0px auto 0px calc(8.33%);
+}
+
+.landing-page .side-deco .messages-block .message3 {
+    height: calc(6.4% * 2);
+    background-color: #232323;
+    margin: 0px calc(8.33%) 0px auto;
+}
+
+.landing-page .side-deco .messages-block .message4 {
+    height: calc(6.4% * 2);
+    background-color: #232323;
+    margin: 0px auto 0px calc(8.33%);
+}
+
+.landing-page .side-deco .messages-block .animated-message-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: calc(6.4% * 1);
+    width: 96px;
+    max-width: 55%;
+    background-color: #232323;
+    margin: 0px calc(8.33%) 0px auto;
+}
+
+.landing-page .side-deco .messages-block .animated-message-block .circle {
+    height: calc(12px + 100vh / 960 * 2);
+    width: calc(12px + 100vh / 960 * 2);
+    border-radius: 50%;
+    background-color: #F6F4F6;
+    margin: auto 4px;
+}
+
+/* Landscape orientation | width >= 1024px */
+@media (orientation: landscape) and (min-width: 1024px) {
+    /* The text-block div */
+    .landing-page .text-block {
+        width: 50%;
+        height: auto;
+        min-height: 750px;
+        background-color: #EEE5DB;
+    }
+
+    .landing-page .text-block .title {
+        flex-direction: row;
+        margin: 104px 0 40px calc(7.5%);
+    }
+
+    .landing-page .text-block h1 {
+        font-size: 160px;
+        line-height: 160px;
+        letter-spacing: 16px;   
+    }
+    
+    .landing-page .text-block p {
+        max-width: 800px;
+        margin-left: calc(8.33%);
+        margin-right: calc(4%);
+        margin-top: 40px;
+    }
+    
+    .landing-page .text-block .action-buttons {margin: 40px calc(4%) 104px calc(8.33%);}
+    .landing-page .text-block .action-buttons h2 {
+        font-size: 48px;
+        line-height: 48px;
+        margin-top: 24px;
+    }
+    .landing-page .text-block .action-buttons h2 img {
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (max-width: 1800px) {
+        .landing-page .text-block .title {margin-bottom: 32px;}
+        .landing-page .text-block .title h1 {
+            font-size: 120px;
+            line-height: 120px;
+            letter-spacing: 12px;
+        }
+
+        .landing-page .text-block p {
+            font-size: 28px;
+            line-height: 52px;
+        }
+
+        .landing-page .text-block .action-buttons h2 {
+            font-size: 44px;
+            line-height: 44px;
+            margin-top: 20px;
+        }
+        .landing-page .text-block .action-buttons h2 img {
+            width: 36px;
+            height: 36px;
+        }
+    }
+    @media (max-width: 1400px) {
+        .landing-page .text-block .title h1 {
+            font-size: 104px;
+            line-height: 104px;
+            letter-spacing: 10.4px;
+        }
+
+        .landing-page .text-block p {
+            font-size: 24px;
+            line-height: 48px;
+        }
+
+        .landing-page .text-block .action-buttons h2 {
+            font-size: 40px;
+            line-height: 40px;
+            margin-top: 20px;
+        }
+        .landing-page .text-block .action-buttons h2 img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    @media (max-width: 1200px) {
+        .landing-page .text-block .title {margin-bottom: 28px;}
+        .landing-page .text-block .title h1 {
+            font-size: 88px;
+            line-height: 88px;
+            letter-spacing: 8.8px;
+        }
+
+        .landing-page .text-block p {
+            font-size: 24px;
+            line-height: 48px;
+        }
+
+        .landing-page .text-block .action-buttons h2 {
+            font-size: 36px;
+            line-height: 36px;
+            margin-top: 20px;
+        }
+
+        .landing-page .text-block .action-buttons h2 img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    /* The side-deco div */
+    .landing-page .side-deco {
+        top: 0;
+        left: 50%;
+        width: 50%;
+        background-color: #F6F4F6;
+        transition: 1s all;
+    }
+
+    .landing-page .side-deco .side-deco-header {
+        width: 100%;
+        height: 136px;
+        display: flex;
+        flex-direction: row;
+        opacity: 15%;
+    }
+    .landing-page .side-deco:hover .side-deco-header {opacity: 100%;}
+    .landing-page .side-deco .side-deco-header .profile-circle {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: #232323;
+        margin: auto 16px auto 40px;
+    }
+    .landing-page .side-deco .side-deco-header h3 {
+        font-size: 36px;
+        line-height: 56px;
+        font-weight: bold;
+        margin: auto 0;
+    }
+    .landing-page .side-deco .separator {
+        width: 100%;
+        height: 4px;
+        background-color: #232323;
+        opacity: 15%;
+    }
+
+    .landing-page .side-deco .messages-block {height: calc(100% - 140px);}
+    .landing-page .side-deco .messages-block .message {opacity: 10%;}
+
+    .landing-page .side-deco .messages-block .animated-message-block {opacity: 15%;}
+    .landing-page .side-deco:hover .messages-block .animated-message-block {opacity: 100%;}
+}
+
+/* (Portrait orientation) or (landscape orientation | width < 1024px) */
+@media (orientation: portrait), (max-width: 1024px) {
+    /* The text-block div */
+    .landing-page .text-block {
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        align-items: center;
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .landing-page .text-block .title {
+        flex-direction: column;
+        margin: 40px auto 0 auto;
+    }
+
+    .landing-page .text-block h1 {
+        font-size: 104px;
+        line-height: 128px;
+        letter-spacing: 10.4px;
+    }
+    
+    .landing-page .text-block p { 
+        width: calc(100% - 64px);
+        max-width: 720px;
+        margin: 40px auto 0 auto;
+    }
+    
+    .landing-page .text-block .action-buttons {
+        width: calc(100% - 64px);
+        max-width: 720px;
+        margin: 60px auto 40px auto;
+    }
+    .landing-page .text-block .action-buttons h2 {
+        font-size: 36px;
+        line-height: 36px;
+        margin-top: 16px;
+    }
+    .landing-page .text-block .action-buttons h2 img {
+        width: 32px;
+        height: 32px;   
+    }
+
+    @media (max-width: 750px) {
+        .landing-page .text-block h1 {
+            font-size: 88px;
+            line-height: 104px;
+            letter-spacing: 8.8px
+        }
+        
+        .landing-page .text-block p {
+            font-size: 28px;
+            line-height: 52px;
+        }
+        
+        .landing-page .text-block .action-buttons {margin: 40px auto 40px auto;}
+        
+        .landing-page .text-block .action-buttons h2 {
+            font-size: 32px;
+            line-height: 32px;
+        }
+        .landing-page .text-block .action-buttons h2 img {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .landing-page .text-block h1 {
+            font-size: 64px;
+            line-height: 80px;
+            letter-spacing: 6.4px
+        }
+        
+        .landing-page .text-block p {
+            font-size: 24px;
+            line-height: 40px;
+            width: calc(100% - 32px);
+        }
+        
+        .landing-page .text-block .action-buttons {
+            width: calc(100% - 32px);
+            margin: 40px auto 40px auto;
+        }
+        
+        .landing-page .text-block .action-buttons h2 {
+            font-size: 28px;
+            line-height: 28px;
+        }
+        .landing-page .text-block .action-buttons h2 img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    /* The side-deco div */
+    .landing-page .side-deco {
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #EEE5DB;
+        opacity: 100%;
+    }
+
+    .landing-page .side-deco .side-deco-header {display: none;}
+    .landing-page .side-deco .separator {display: none;}
+
+    .landing-page .side-deco .messages-block {
+        height: 100%;
+        opacity: 5%;
+    }
+}
