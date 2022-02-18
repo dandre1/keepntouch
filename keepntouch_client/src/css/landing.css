@@ -56,11 +56,19 @@
     line-height: 56px;
 }
 
+.landing-page .text-block .action-buttons .button-link {
+    text-decoration: none;
+    color: #232323;
+}
 .landing-page .text-block .action-buttons h2 {
+    position: relative;
     letter-spacing: 1px;
     font-weight: bold;
+    width: fit-content;
 }
-.landing-page .text-block .action-buttons h2:hover {cursor: pointer;}
+.landing-page .text-block .action-buttons h2:hover {
+    cursor: pointer;
+}
 .landing-page .text-block .action-buttons h2 img {margin: auto 0 auto 8px;}
 .landing-page .text-block .action-buttons h2:hover img {transform: translateX(+25%);}
 
@@ -326,7 +334,7 @@
     .landing-page .text-block .action-buttons h2 {
         font-size: 36px;
         line-height: 36px;
-        margin-top: 16px;
+        margin: 16px auto 0 auto;
     }
     .landing-page .text-block .action-buttons h2 img {
         width: 32px;

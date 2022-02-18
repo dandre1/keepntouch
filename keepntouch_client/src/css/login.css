@@ -1,0 +1,169 @@
+/* General stuff */
+.login-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+
+    color: #232323;
+    background-color: #EFE6DC;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-page .login-page-container {
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.login-page .login-page-container h1 {
+    font-size: 160px;
+    font-weight: bold;
+    line-height: 160px;
+}
+
+.login-page .login-page-container .login-form {
+    display: flex;
+    flex-direction: column;
+    
+    width: calc(100% - 64px);
+    max-width: 640px;
+
+    margin: 80px auto 0 auto;
+}
+
+.login-page .login-page-container .login-form .login-input {
+    width: 100%;
+    height: 72px;
+    box-sizing: border-box;
+
+    border: 4px solid #232323;
+    border-radius: 8px;
+    background-color: transparent;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 32px;
+    padding: 0 48px 0 28px;
+}
+.login-page .login-page-container .login-form .hidden-login-input {display: none;}
+
+.login-page .login-page-container .login-form .password-field {position: relative;}
+.login-page .login-page-container .login-form .password-field span {
+    position: absolute;
+    top: calc(50% - 16px);
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+.login-page .login-page-container .login-form .password-field span:hover {cursor: pointer;}
+
+.login-page .login-page-container .login-form .error {
+    font-size: 16px;
+    width: 100%;
+    color: #FF0033;
+    text-align: left;
+    margin: 0px 0px 8px 2px;
+}
+.login-page .login-page-container .login-form .response {text-align: center;}
+
+.login-page .login-page-container .login-form button {
+    border: 0;
+    padding: 0;
+    margin: 32px auto 56px auto;
+
+    width: 216px;
+    height: 64px;
+    background-color: #232323;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+}
+.login-page .login-page-container .login-form button h2 {
+    font-size: 32px;
+    line-height: 32px;
+    color: #F7F5F7;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin: auto 0;
+}
+.login-page .login-page-container .login-form button img {
+    width: 32px;
+    height: 32px;
+    margin: auto 0 auto 16px;
+}
+
+.login-page .login-page-container .login-form button:hover {
+    cursor: pointer;
+    transform: translateX(4px);
+    box-shadow: -4px 0px rgba(0, 0, 0, 0.45);
+}
+.login-page .login-page-container .login-form button:hover img {
+    transform: translateX(+4px);
+}
+
+.login-page .login-page-container .bottom-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page .login-page-container .bottom-messages a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #232323;
+    opacity: 60%;
+    
+    margin: 8px auto;
+}
+.login-page .login-page-container .bottom-messages a:hover {opacity: 100%;}
+.login-page .login-page-container .bottom-messages a span {
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none !important;
+    margin: auto 0 auto 8px;
+}
+
+@media (max-width: 750px) {
+    .login-page .login-page-container h1 {
+        font-size: 120px;
+        line-height: 120px;
+    }
+
+    .login-page .login-page-container .login-form {
+        margin-top: 64px;
+        max-width: 520px;
+    }
+    
+    .login-page .login-page-container .login-form button {margin-bottom: 40px;}
+}
+
+@media (max-width: 500px) {
+    .login-page .login-page-container h1 {
+        font-size: 104px;
+        line-height: 104px;
+    }
+}
+
+@media (max-width: 450px) {
+    .login-page .login-page-container h1 {
+        font-size: 88px;
+        line-height: 88px;
+    }
+
+    .login-page .login-page-container .login-form .login-input {
+        font-size: 20px;
+        padding: 0 48px 0 16px;
+    }
+
+    .login-page .login-page-container {margin: 40px auto;}
+}

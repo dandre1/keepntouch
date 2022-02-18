@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/landing.css'
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
@@ -11,8 +12,8 @@ const Landing = () => {
         </div>
         <p>Did you forget again to send that message? Is it hard for you to find time to talk with your beloved ones? No worries, with us, keeping in touch has never been easier!</p>
         <div className="action-buttons">
-            <h2 className="landing-button">START CHATTING <img src="/icons/arrow1.svg" alt="moving forward arrow" /></h2>
-            <h2 className="landing-button">READ MORE <img src="/icons/arrow1.svg" alt="moving forward arrow" /></h2>
+            <Link className='button-link' to='/login'><h2>START CHATTING <img src="/icons/arrow1.svg" alt="start chatting" /></h2></Link>
+            <Link className='button-link' to='/read-more'><h2>READ MORE <img src="/icons/arrow1.svg" alt="read more" /></h2></Link>
         </div>
     </div>;  
 

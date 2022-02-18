@@ -1,16 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
     const Users = sequelize.define("Users", {
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false, 
-            unique: true,
-            validate: {
-                isAlphanumeric: true, // will only allow alphanumeric characters,
-                notNull: true, // won't allow null
-                notEmpty: true, // don't allow empty strings
-                len: [5, 16], // only allow values with length between a and b
-            }
-        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -48,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 notNull: true, // won't allow null
                 notEmpty: true, // don't allow empty strings
+                len: [8, 255], // only allow values with length between a and b
             }
         }    
     })
