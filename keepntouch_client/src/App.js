@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { AuthContext } from './helpers/AuthContext';
+import axios from 'axios';
 import { Route, Routes } from "react-router-dom";
+
+import { AuthContext } from './helpers/AuthContext';
 
 import Landing from "./pages/Landing";
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 
-import axios from 'axios';
-
 function App() {
   const [authState, setAuthState] = useState(false);
   useEffect(() => { 
-    axios.get('http://localhost:3001/user/auth').then((response) => {
+    axios.get('/user/auth').then((response) => {
       if (response.data.error) {
         setAuthState(false);
       }

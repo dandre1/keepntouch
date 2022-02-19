@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
+
 import '../css/register.css';
 import { GoEye, GoEyeClosed } from "react-icons/go";
-import axios from 'axios';
 
 function Register() {
   const [passwordShown, setPasswordShown] = useState(false);

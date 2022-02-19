@@ -1,17 +1,20 @@
 import  React from 'react';
-import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+
 import { AuthContext } from '../helpers/AuthContext';
 
 import '../css/login.css';
 import { GoEye, GoEyeClosed } from "react-icons/go";
-import axios from 'axios';
 
 function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
   const {setAuthState} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const togglePasswordShown = () => {
       setPasswordShown(!passwordShown);
@@ -40,9 +43,8 @@ function Login() {
 
   const onSubmit = (data, { setFieldError }) => {
     axios.post('/user/login', data).then((response) => {
-        console.log(response)
-        //localStorage.setItem("accessToken", response.data);
         setAuthState(true);
+        navigate('/');
     })
     .catch((error) => {
       setFieldError(error.response.data.field, error.response.data.message);
