@@ -48,13 +48,13 @@ router.post("/login", async (req, res) => {
                 maxAge: 60*60*24*7*1000,
                 httpOnly: true
             });
-            return res.json("LOGGED IN!");
+            return res.status(201).json(accessToken);
         }
     });
 });
 
-router.get("/profile", validateToken, (req, res) => {
-    res.json("profile");
+router.get('/auth', validateToken, async (req, res) => {
+    return res.json("da")
 });
 
 module.exports = router

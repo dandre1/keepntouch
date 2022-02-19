@@ -2,3 +2,4 @@
 /config
 JWT.js
 /models/index.js
+.env

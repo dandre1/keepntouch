@@ -1,14 +1,17 @@
 import  React from 'react';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useState, useContext } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
+import { AuthContext } from '../helpers/AuthContext';
+
 import '../css/login.css';
 import { GoEye, GoEyeClosed } from "react-icons/go";
 import axios from 'axios';
 
 function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
+  const {setAuthState} = useContext(AuthContext);
 
   const togglePasswordShown = () => {
       setPasswordShown(!passwordShown);
@@ -35,13 +38,14 @@ function Login() {
     response: yup.string()
     });
 
-  const onSubmit = async (data, { setFieldError }) => {
-    axios.post('http://localhost:3001/user/login', data)
-    .then((response) => {
-        console.log("user logged in!");
+  const onSubmit = (data, { setFieldError }) => {
+    axios.post('/user/login', data).then((response) => {
+        console.log(response)
+        //localStorage.setItem("accessToken", response.data);
+        setAuthState(true);
     })
-    .catch((response) => {
-      setFieldError(response.response.data.field, response.response.data.message);
+    .catch((error) => {
+      setFieldError(error.response.data.field, error.response.data.message);
     });
   } 
 
